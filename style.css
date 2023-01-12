@@ -1,0 +1,75 @@
+@charset "UTF-8"; /* 한글 안깨지게 하기 */
+*{margin: 0; padding: 0;}  /* 여백 없애기 */
+li{list-style: none;} /* 앞에 점이 사라짐 */
+
+.wrap{
+    width: 800px;
+    margin: 100px auto 0; /* 위 양옆 아래 */
+}
+.wrap .main{}
+
+.wrap .main .your-class{height: 450px;}
+.wrap .main .your-class .slick-slide{
+    height: 450px;
+}
+.wrap .main .your-class .slick-slide video{
+    width: 100%;
+}
+.wrap .main .your-class .slick-arrow{
+    position: absolute;
+    /* 자기몸이 20px정도 됨 -10px빼기 */
+    top: calc(50% - 10px);
+   /*  폰트의 기본값은 16px
+    크롬에서는 최소 폰트 크기가 10px이기 때문에
+    8px--> 적용이 안됨 */
+    font-size: 0; /* 따라서 '폰트없음'은 '0'으로 만들기 */
+    visibility: hidden; /* 안보이게 하기 */
+
+}
+.wrap .main .your-class .slick-prev{
+    z-index: 5; /* 위로 올리기 */
+    left: 5%;
+}
+
+.wrap .main .your-class .slick-prev::after{
+    content: "\f053";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    visibility: visible;
+    font-size: 30px;
+    color: #fff; 
+}
+.wrap .main .your-class .slick-next{
+    right: 5%;
+}
+
+.wrap .main .your-class .slick-next::after{
+    content: "\f054";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    visibility: visible;
+    font-size: 30px;
+    color: #fff; 
+}
+
+.wrap .main .your-class .slick-dots{
+    text-align: center;
+}
+.wrap .main .your-class .slick-dots li{
+    display: inline-block;
+    margin: 20px 5px 0; /* 상 좌우 하 */ /* dots의 간격 */
+}
+.wrap .main .your-class .slick-dots li button{
+  border: none;
+  font-size: 0;
+  width: 15px; height: 15px;
+  border-radius: 50%;
+  background-color: #999;
+  transition: 0.3s;
+}
+.wrap .main .your-class .slick-dots li.slick-active button{
+    background-color: cornflowerblue;
+    width: 20px;
+    border-radius: 8px;
+  }
+  
